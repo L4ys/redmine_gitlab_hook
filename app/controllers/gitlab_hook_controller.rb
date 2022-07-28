@@ -1,7 +1,7 @@
 require 'json'
 
 class GitlabHookController < SysController
-
+  skip_before_action :verify_authenticity_token
   GIT_BIN = Redmine::Configuration[:scm_git_command] || 'git'
 
 
